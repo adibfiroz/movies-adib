@@ -18,7 +18,7 @@ const Modal = ({ movie, onClose }: MovieModalProps) => {
         const fetchMovieDetails = async () => {
             try {
                 const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
-                const response = await axios.get(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${movie.imdbID}`);
+                const response = await axios.get(`https://www.omdbapi.com/?apikey=${API_KEY}&i=${movie.imdbID}`);
                 setDetails(response.data);
             } catch (error) {
                 console.error('Failed to fetch movie details:', error);

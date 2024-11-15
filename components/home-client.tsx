@@ -13,7 +13,7 @@ const HomepClient = () => {
     const fetchMovies = async (query?: string) => {
         try {
             const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
-            const response = await axios.get(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${query || 'popular'}`);
+            const response = await axios.get(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${query || 'popular'}`);
             setMovies(response.data.Search || []);
         } catch (error) {
             console.error('Failed to fetch movies:', error);
